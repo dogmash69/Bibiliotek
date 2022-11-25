@@ -1,0 +1,27 @@
+.container {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 32vh;
+    width: 60%;
+    margin-top: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2%;
+    align-items: center;
+    background-color: lightgray;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+#user, #pass {
+    height: 35px;
+    width: 220px;
+    margin-bottom: 3%;
+    
+}
+
+.container button {
+    height: 35px;
+    width: 90px;
+}

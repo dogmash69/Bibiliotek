@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.menu {
+    height: 60px;
+    width: 100%;
+    font-size: 20px;
+    text-decoration: none;
+    background-color: darkgray;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 7px;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}

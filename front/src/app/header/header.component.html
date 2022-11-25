@@ -1,0 +1,9 @@
+<header *ngIf="loginservice.isUserLoggedIn()">
+    <nav class="menu">
+      <div><a  routerLink="/" class="nav-link">View Books</a></div>
+      <div><a  routerLink="/addbook" class="nav-link">Add New Book</a></div>
+      <div><a  routerLink="/users" class="nav-link">View Users</a></div>
+      <div><a  routerLink="/adduser" class="nav-link">Add New User</a></div>
+      <div><a  routerLink="/logout" class="nav-link">Logout</a></div>
+    </nav> 
+</header>

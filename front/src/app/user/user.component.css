@@ -1,0 +1,13 @@
+table {
+    font-family: sans-serif;
+}
+
+th {
+    text-align: left;
+    background-color: lightblue;
+}
+
+td {
+    width: 47%;
+    background-color: lightgray;
+}

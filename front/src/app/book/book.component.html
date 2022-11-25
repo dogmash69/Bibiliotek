@@ -1,0 +1,43 @@
+<div>
+  <div  id="editWindow">
+      <form id="selectUser" #booksForm="ngForm">
+        <div hidden>
+          <input type="text" name="id"  [(ngModel)]="book.id">
+        </div>
+        <div hidden>
+          <input type="text" name="title"  [(ngModel)]="book.title">
+        </div>
+          <div hidden>
+          <input type="text" name="author"  [(ngModel)]="book.author">
+        </div>
+          <div hidden>
+          <input  type="text" name="genre"  [(ngModel)]="book.genre">
+        </div>
+        <div>
+          <input type="text" name="users"  [(ngModel)]="book.users">
+          <button (click)="updateBook(book.id, book)">EDIT</button>
+        </div>
+        
+      </form>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>title</th>
+        <th>author</th>
+        <th>genre</th>
+        <th>Borrower</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books">
+        <td>{{book.title}}</td>
+        <td>{{book.author}}</td>
+        <td>{{book.genre}}</td>
+        <td>{{book.users}}</td>
+        <button (click)="deleteBook(book)"> Delete Book</button>
+        <button (click)="editButton(book.id)"> Change Users</button>
+      </tr>
+    </tbody>
+  </table>
+</div>
