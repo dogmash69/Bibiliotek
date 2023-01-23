@@ -2,7 +2,7 @@
     font-family: sans-serif;
     display: flex;
     flex-direction: column;
-    height: 50vh;
+    height: 45vh;
     width: 60%;
     margin-top: 5%;
     margin-left: auto;
@@ -11,6 +11,7 @@
     background-color: lightgray;
     border: 2px solid black;
     border-radius: 10px;
+    padding-top: 2%;
 }
 
 #name, #birthday {

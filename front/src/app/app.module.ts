@@ -12,6 +12,7 @@ import { UserComponent } from './user/user.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
+import { BookDescriptionComponent } from './book-description/book-description.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { LogoutComponent } from './logout/logout.component';
     AddUserComponent,
     LoginComponent,
     LogoutComponent,
+    BookDescriptionComponent,
   ],
   imports: [
     BrowserModule,

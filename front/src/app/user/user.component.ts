@@ -17,10 +17,12 @@ export class UserComponent implements OnInit{
   }
 
   deleteUser(user: Users): void {
+    if(confirm("Voulez-vous supprimer ce livre?")){
     this.httpClientService.deleteUser(user)
       .subscribe( data => {
         this.users = this.users.filter(u => u !== user);
       })
+    }
   };
 
 

@@ -1,0 +1,51 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 490px;
+    width: 50%;
+    background-color: lightgray;
+    padding-left: 4%;
+    padding-right: 2%;
+    padding-top: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    border-radius: 20px;
+}
+
+.card h1 {
+    font-size: 30px;
+}
+
+.card h3 {
+    width: 58%;
+}
+
+.card img {
+    height: 45vh;
+    width: 16vw;
+    border-radius: 10px;
+    position: absolute;
+    right: 26%;
+    top: 31%;
+}
+
+@media (max-width: 1280px) {
+    
+    .card {
+        height: 400px;
+        width: 50%;
+        margin-top: 3%;
+        font-size: 14px;
+    }
+
+    .card img {
+        height: 52vh;
+        width: 16vw;
+        border-radius: 10px;
+        position: absolute;
+        right: 27%;
+        top: 28%;
+    }
+
+  }

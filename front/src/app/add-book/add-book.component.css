@@ -13,15 +13,40 @@
     border-radius: 10px;
 }
 
-#title, #author, #genre {
+#title, #author, #genre, #cover {
     height: 35px;
     width: 220px;
     margin-bottom: 3%;
     
 }
 
+#description {
+    height: 90px;
+    width: 220px;
+    margin-bottom: 3%;
+}
+
+#description::placeholder {
+    position: absolute;
+    top: 10%;
+}
+
+textarea {
+    font-family: sans-serif;
+    padding-top: 5%;
+}
+
 .addBook button {
     height: 35px;
     width: 70px;
     margin-left: 33%;
+}
+
+
+@media (max-width: 1280px) {
+
+    .addBook {
+        height: 74vh;
+    }
+
 }

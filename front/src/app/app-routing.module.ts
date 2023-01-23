@@ -7,9 +7,11 @@ import { UserComponent } from './user/user.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AuthGuardService } from './service/auth-guard.service';
+import { BookDescriptionComponent } from './book-description/book-description.component';
 
 const routes: Routes = [
   {path: '', component: BookComponent, canActivate:[AuthGuardService]},
+  {path: 'book/:id', component: BookDescriptionComponent, canActivate:[AuthGuardService]},
   {path: 'addbook', component: AddBookComponent, canActivate:[AuthGuardService]},
   {path: 'users', component: UserComponent, canActivate:[AuthGuardService]},
   {path: 'adduser', component: AddUserComponent, canActivate:[AuthGuardService]},

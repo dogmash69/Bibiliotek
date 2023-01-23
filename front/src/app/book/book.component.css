@@ -16,8 +16,13 @@ td {
     padding-left: 0.5%;
 }
 
+.button {
+    width: 105px;
+    height: 25px;
+}
+
 #editWindow{
-    border-radius: 10px;
+    border-radius: 7px;
     border: 2px solid black;
     background-color: lightgray;
     margin-top: 0.5%;
@@ -25,16 +30,29 @@ td {
     padding-bottom: 0.2%;
 }
 
-#editWindow input{
-    margin-left: 67%;
+#editWindow select{
+    margin-left: 76%;
     width: 250px;
     height: 35px;
+}
+
+#editWindow input {
+    position: absolute;
+    height: 29px;
+    width: 250px;
+    left: 2%;
 }
 
 #editWindow button{
     position: absolute;
     right: 2%;
     width: 110px;
-    height: 40px;
+    height: 35px;
     margin-left: 30%;
+}
+
+@media (max-width: 1280px) {
+    #editWindow select{
+        margin-left: 70%;
+    }
 }

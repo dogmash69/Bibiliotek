@@ -8,7 +8,7 @@ import { Books, HttpClientService } from '../service/http-client.service';
 })
 export class AddBookComponent {
   
-      book: Books = new Books("","","","","");
+      book: Books = new Books("","","","","","","");
 
       constructor(
         private httpClientService: HttpClientService
@@ -21,8 +21,8 @@ export class AddBookComponent {
         this.httpClientService.createBook(this.book)
             .subscribe( data => {
               alert("Book created !");
+              window.location.reload();
             });
-
       };
 
 }

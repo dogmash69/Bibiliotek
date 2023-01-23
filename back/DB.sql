@@ -22,6 +22,8 @@ CREATE TABLE `books` (
      `title` varchar(255) DEFAULT NULL,
      `author` varchar(255) DEFAULT NULL,
      `genre` varchar(255) DEFAULT NULL,
+     `description` varchar(1500) DEFAULT NULL,
+     `cover` varchar(1500) DEFAULT NULL,
      PRIMARY KEY (`id`)
 );
 

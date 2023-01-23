@@ -10,6 +10,12 @@
       <div>
         <input [(ngModel)]="book.genre" placeholder="Genre" name="genre" class="form-control" id="genre">
       </div>
+      <div>
+        <textarea [(ngModel)]="book.description" placeholder="Description" name="description" class="form-control" id="description"></textarea>
+      </div>
+      <div>
+        <input [(ngModel)]="book.cover" placeholder="Cover" name="cover" class="form-control" id="cover">
+      </div>
       <button class="btn btn-success" (click)="createBook()">Create</button>
     </form>
 </div>

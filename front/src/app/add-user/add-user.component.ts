@@ -21,8 +21,9 @@ export class AddUserComponent {
       this.httpClientService.createUser(this.user)
           .subscribe( data => {
             alert("User created !");
+            window.location.reload();
           });
-
+       
     };
 
 }

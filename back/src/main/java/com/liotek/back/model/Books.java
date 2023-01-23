@@ -12,7 +12,8 @@ public class Books {
     private String title;
     private String author;
     private String genre;
-
+    private String description;
+    private String cover;
     private String users;
 
 
@@ -20,11 +21,13 @@ public class Books {
 
     }
 
-    public Books(long id, String title, String author, String genre) {
+    public Books(long id, String title, String author, String genre, String description, String cover) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.genre = genre;
+        this.description = description;
+        this.cover = cover;
     }
 
     public long getId() {
@@ -57,6 +60,22 @@ public class Books {
 
     public void setGenre(String genre) {
         this.genre = genre;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getCover() {
+        return cover;
+    }
+
+    public void setCover(String cover) {
+        this.cover = cover;
     }
 
     public String getUsers() {

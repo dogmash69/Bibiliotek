@@ -5,9 +5,11 @@ table {
 th {
     text-align: left;
     background-color: lightblue;
+    padding-left: 0.5%;
 }
 
 td {
     width: 47%;
     background-color: lightgray;
+    padding-left: 0.5%;
 }
