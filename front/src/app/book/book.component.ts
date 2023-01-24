@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Books, HttpClientService, Users } from '../service/http-client.service';
 
@@ -20,10 +20,9 @@ export class BookComponent implements OnInit{
   @ViewChild('booksForm')
   form!: NgForm;
  
-  displayEdit: boolean = false;
   pickedBook: Books[] = [];
   pickedBookId!: string;
-  book: Books = new Books("","","","","","","");
+  book: Books = new Books("","","","","","",new Users("", "", ""));
   
   constructor( private httpClientService:HttpClientService){}
 
@@ -33,6 +32,7 @@ export class BookComponent implements OnInit{
     this.httpClientService.getBooks().subscribe((books)=> {this.pickedBook = books})
   }
 
+  @Output()
   searchTextChanged: EventEmitter<string> = new EventEmitter<string>();
 
   onSearchTextChanged(){
@@ -42,7 +42,6 @@ export class BookComponent implements OnInit{
   }
  
   deleteBook(book: Books, id : string): void {
-    this.displayEdit = !this.displayEdit;
     this.pickedBookId = id;
     let currentBook = this.pickedBook.find((b) => {return b.id === id});
     if(confirm(`Voulez-vous supprimer le livre ${currentBook?.title}?`)){
@@ -50,11 +49,9 @@ export class BookComponent implements OnInit{
       .subscribe( data => {
         this.books = this.books.filter(u => u !== book);
       })}
-      console.table(currentBook);
   };
 
   editButton(id: string){
-    this.displayEdit = !this.displayEdit;
     this.pickedBookId = id;
     let currentBook = this.pickedBook.find((b) => {return b.id === id});
     console.log(currentBook);
@@ -65,7 +62,7 @@ export class BookComponent implements OnInit{
       "genre": currentBook?.genre,
       "description": currentBook?.description,
       "cover": currentBook?.cover,
-      "users": currentBook?.users
+      "users": currentBook?.users.id
     })
   }
 
@@ -75,7 +72,8 @@ export class BookComponent implements OnInit{
           alert("Book updated !");
           window.location.reload();
         });
-
+        console.log(this.book);
+        
   };
 }
 

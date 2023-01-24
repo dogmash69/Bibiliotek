@@ -1,6 +1,6 @@
 <div>
   <div  id="editWindow">
-    <input type="text" name="id"  [(ngModel)]="searchBook" (input)="onSearchTextChanged()" placeholder="Search a book">
+    <input type="text" name="id"  [(ngModel)]="searchBook" (input)="onSearchTextChanged()" placeholder="Search book, author, category or user">
       <form id="selectUser" #booksForm="ngForm">
         <div hidden>
           <input type="text" name="id"  [(ngModel)]="book.id">
@@ -21,9 +21,9 @@
           <input  type="text" name="cover"  [(ngModel)]="book.cover">
         </div>
         <div>
-          <select name="users" [(ngModel)]="book.users" onselect="searchUser()">
+          <select name="users" [(ngModel)]="book.users.id" onselect="searchUser()">
             <option>En stock</option>
-            <option *ngFor="let user of users" value="{{user.name}}" >{{user.name}}</option>
+            <option *ngFor="let user of users" value="{{user.id}}" >{{user.name}} -- {{user.birthday}}</option>
           </select>
           <button (click)="updateBook(book.id, book)">EDIT</button>
         </div>
@@ -40,11 +40,11 @@
       </tr>
     </thead>
     <tbody *ngFor="let book of books">
-      <tr  *ngIf="searchBook === '' || book.title.toLowerCase().includes(searchBook) " >
+      <tr  *ngIf="searchBook === '' || book.title.toLowerCase().includes(searchBook) || book.author.toLowerCase().includes(searchBook)|| book.genre.toLowerCase().includes(searchBook) || book.users.name.toLowerCase().includes(searchBook)" >
         <td><a routerLink="/book/{{book.id}}" class="nav-link">{{book.title}}</a></td>
         <td>{{book.author}}</td>
         <td>{{book.genre}}</td>
-        <td>{{book.users}}</td>
+        <td>{{book.users.name}}</td>
         <button (click)="deleteBook(book, book.id)" class="button"> Delete Book</button>
         <button (click)="editButton(book.id)" class="button"> Change Users</button>
       </tr>

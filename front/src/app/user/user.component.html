@@ -1,4 +1,17 @@
 <div>
+  <div  id="editWindow">
+    <form #usersForm="ngForm">
+      <div>
+        <div hidden>
+          <input type="text" name="id"  [(ngModel)]="user.id">
+        </div>
+        <input  type="text" name="name" [(ngModel)]="user.name">
+        <input  type="text" name="birthday" [(ngModel)]="user.birthday">
+
+        <button (click)="updateUser(user.id, user)" class="button" >EDIT</button>
+      </div>
+    </form>
+  </div>
     <table>
     <thead>
     <tr>
@@ -10,7 +23,8 @@
         <tr *ngFor="let user of users">
             <td>{{user.name}}</td>
             <td>{{user.birthday}}</td>
-            <button (click)="deleteUser(user)"> Delete User</button>
+            <button (click)="deleteUser(user)" class="button" > Delete User</button>
+            <button (click)="editButton(user.id)" class="button"> Change Users</button>
             </tr>
     </tbody>
       </table>

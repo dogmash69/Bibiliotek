@@ -1,11 +1,10 @@
 package com.liotek.back.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
+@Table(name = "users")
 public class Users {
 
     @Id
@@ -13,6 +12,9 @@ public class Users {
     private long id;
     private String name;
     private String birthday;
+
+    @OneToMany(mappedBy = "users")
+    private List<Books> books;
 
     public Users(){
 

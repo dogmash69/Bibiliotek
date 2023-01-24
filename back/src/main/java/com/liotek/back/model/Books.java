@@ -1,9 +1,11 @@
 package com.liotek.back.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 //import javax.persistence.Id;
 @Entity
+@Table(name = "books")
 public class Books {
 
     @Id
@@ -14,7 +16,9 @@ public class Books {
     private String genre;
     private String description;
     private String cover;
-    private String users;
+    @ManyToOne
+    @JoinColumn(name = "users_id")
+    private Users users;
 
 
     public Books(){
@@ -78,11 +82,11 @@ public class Books {
         this.cover = cover;
     }
 
-    public String getUsers() {
+    public Users getUsers() {
         return users;
     }
 
-    public void setUsers(String users) {
+    public void setUsers(Users users) {
         this.users = users;
     }
 }

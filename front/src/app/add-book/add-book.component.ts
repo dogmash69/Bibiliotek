@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Books, HttpClientService } from '../service/http-client.service';
+import { Books, HttpClientService, newBook } from '../service/http-client.service';
 
 @Component({
   selector: 'app-add-book',
@@ -8,7 +8,7 @@ import { Books, HttpClientService } from '../service/http-client.service';
 })
 export class AddBookComponent {
   
-      book: Books = new Books("","","","","","","");
+      book: newBook = new newBook("","","","","","", {"id": "18"});
 
       constructor(
         private httpClientService: HttpClientService

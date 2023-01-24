@@ -1,6 +1,6 @@
 <div class="addBook">
     <h2>Add Book</h2>
-    <form>
+    <form >
       <div>
         <input type="name" [(ngModel)]="book.title" placeholder="Title" name="title" class="form-control" id="title">
       </div>
@@ -15,6 +15,9 @@
       </div>
       <div>
         <input [(ngModel)]="book.cover" placeholder="Cover" name="cover" class="form-control" id="cover">
+      </div>
+      <div hidden>
+        <input [(ngModel)]="book.users" name="users" class="form-control" id="users">
       </div>
       <button class="btn btn-success" (click)="createBook()">Create</button>
     </form>

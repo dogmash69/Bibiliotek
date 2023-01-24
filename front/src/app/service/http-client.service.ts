@@ -9,7 +9,19 @@ export class Books{
     public genre:string,
     public description:string,
     public cover:string,
-    public users:string
+    public users: Users
+  ) {}
+}
+
+export class newBook{
+  constructor(
+    public id:string,
+    public title:string,
+    public author:string,
+    public genre:string,
+    public description:string,
+    public cover:string,
+    public users: {"id": string }
   ) {}
 }
 
@@ -49,7 +61,7 @@ export class HttpClientService {
 
   public createBook(book: any) {
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
-    return this.httpClient.post<Books>("http://localhost:8080/books", book,{headers});
+    return this.httpClient.post<newBook>("http://localhost:8080/books", book,{headers});
   }
 
   public updateBook(id: string, book: Books) {
@@ -71,6 +83,14 @@ export class HttpClientService {
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
     return this.httpClient.post<Users>("http://localhost:8080/users", user,{headers});
   }
+
+  public updateUser(id: string, user: Users) {
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
+    return this.httpClient.put<Users>("http://localhost:8080/users/"+id, user,{headers});
+  }
+
+  
+
 
 
 }
